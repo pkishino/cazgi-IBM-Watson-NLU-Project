@@ -38,7 +38,8 @@ app.get("/",(req,res)=>{
 //The endpoint for the webserver ending with /url/emotion
 app.get("/url/emotion", (req,res) => {
     //Extract the url passed from the client through the request object
-    let urlToAnalyze = req.query.url
+    let urlToAnalyze = req.query.url;
+    console.log(urlToAnalyze);
     const analyzeParams = 
         {
             "url": urlToAnalyze,
@@ -65,7 +66,8 @@ app.get("/url/emotion", (req,res) => {
 //The endpoint for the webserver ending with /url/sentiment
 app.get("/url/sentiment", (req,res) => {
      //Extract the url passed from the client through the request object
-     let urlToAnalyze = req.query.url
+     let urlToAnalyze = req.query.url;
+     console.log(urlToAnalyze);
      const analyzeParams = 
          {
              "url": urlToAnalyze,
@@ -91,10 +93,11 @@ app.get("/url/sentiment", (req,res) => {
 
 //The endpoint for the webserver ending with /text/emotion
 app.get("/text/emotion", (req,res) => {
-    let textToAnalyze = req.query.text
+    let textToAnalyze = req.query.text;
+    console.log(textToAnalyze);
     const analyzeParams = 
         {
-            "url": textToAnalyze,
+            "text": textToAnalyze,
             "features": {
                 "keywords": {
                                 "emotion": true,
@@ -116,10 +119,11 @@ app.get("/text/emotion", (req,res) => {
 });
 
 app.get("/text/sentiment", (req,res) => {
-    let textToAnalyze = req.query.text
+    let textToAnalyze = req.query.text;
+    console.log(textToAnalyze);
     const analyzeParams = 
         {
-            "url": textToAnalyze,
+            "text": textToAnalyze,
             "features": {
                 "keywords": {
                                 "sentiment": true,
